@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Local Pro — AI-Powered Local SEO for Long Island & NYC</title>
+<meta name="description" content="AI Local Pro helps local businesses dominate Google search results with AI-powered SEO, Google Business Profile optimization, and data-driven marketing. Serving Long Island and NYC.">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0B1929;
+  --teal: #1B9AAA;
+  --teal-light: #23C4D8;
+  --orange: #F4A261;
+  --cream: #F7F8FA;
+  --white: #FFFFFF;
+  --gray: #6B7B8D;
+  --gray-light: #E8ECF0;
+  --text: #1A2332;
+}
+
+- { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+font-family: ‘DM Sans’, sans-serif;
+color: var(–text);
+background: var(–white);
+-webkit-font-smoothing: antialiased;
+overflow-x: hidden;
+}
+
+/* ===== HERO ===== */
+.hero {
+background: var(–navy);
+min-height: 100vh;
+display: flex;
+align-items: center;
+position: relative;
+overflow: hidden;
+}
+
+.hero::before {
+content: ‘’;
+position: absolute;
+top: -40%;
+right: -20%;
+width: 800px;
+height: 800px;
+background: radial-gradient(circle, rgba(27,154,170,0.12) 0%, transparent 70%);
+pointer-events: none;
+}
+
+.hero::after {
+content: ‘’;
+position: absolute;
+bottom: -30%;
+left: -10%;
+width: 600px;
+height: 600px;
+background: radial-gradient(circle, rgba(244,162,97,0.08) 0%, transparent 70%);
+pointer-events: none;
+}
+
+.container {
+max-width: 1100px;
+margin: 0 auto;
+padding: 0 24px;
+width: 100%;
+}
+
+.hero .container {
+position: relative;
+z-index: 1;
+padding-top: 80px;
+padding-bottom: 80px;
+}
+
+.hero-badge {
+display: inline-block;
+background: rgba(27,154,170,0.15);
+color: var(–teal-light);
+font-size: 13px;
+font-weight: 700;
+letter-spacing: 2px;
+text-transform: uppercase;
+padding: 8px 18px;
+border-radius: 100px;
+margin-bottom: 28px;
+animation: fadeInUp 0.8s ease both;
+}
+
+.hero h1 {
+font-family: ‘Playfair Display’, serif;
+font-size: clamp(38px, 6vw, 64px);
+color: var(–white);
+line-height: 1.1;
+margin-bottom: 24px;
+max-width: 700px;
+animation: fadeInUp 0.8s ease 0.1s both;
+}
+
+.hero h1 span {
+color: var(–teal-light);
+}
+
+.hero p.subtitle {
+font-size: 19px;
+color: var(–gray);
+line-height: 1.7;
+max-width: 560px;
+margin-bottom: 40px;
+animation: fadeInUp 0.8s ease 0.2s both;
+}
+
+.hero-cta {
+display: inline-flex;
+align-items: center;
+gap: 10px;
+background: var(–teal);
+color: var(–white);
+font-size: 16px;
+font-weight: 700;
+padding: 16px 36px;
+border-radius: 8px;
+text-decoration: none;
+transition: all 0.3s ease;
+animation: fadeInUp 0.8s ease 0.3s both;
+}
+
+.hero-cta:hover {
+background: var(–teal-light);
+transform: translateY(-2px);
+box-shadow: 0 8px 30px rgba(27,154,170,0.3);
+}
+
+.hero-stats {
+display: flex;
+gap: 48px;
+margin-top: 60px;
+padding-top: 40px;
+border-top: 1px solid rgba(255,255,255,0.08);
+animation: fadeInUp 0.8s ease 0.4s both;
+}
+
+.hero-stat .number {
+font-family: ‘Playfair Display’, serif;
+font-size: 36px;
+color: var(–orange);
+font-weight: 700;
+}
+
+.hero-stat .label {
+font-size: 13px;
+color: var(–gray);
+margin-top: 4px;
+letter-spacing: 0.5px;
+}
+
+/* ===== NAV ===== */
+nav {
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+z-index: 100;
+padding: 20px 0;
+transition: all 0.3s ease;
+}
+
+nav.scrolled {
+background: rgba(11,25,41,0.95);
+backdrop-filter: blur(12px);
+padding: 14px 0;
+box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+nav .container {
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.logo {
+font-family: ‘DM Sans’, sans-serif;
+font-size: 22px;
+font-weight: 700;
+color: var(–white);
+text-decoration: none;
+letter-spacing: -0.5px;
+}
+
+.logo em {
+color: var(–teal-light);
+font-style: normal;
+}
+
+nav a.nav-cta {
+background: var(–teal);
+color: var(–white);
+font-size: 14px;
+font-weight: 700;
+padding: 10px 24px;
+border-radius: 6px;
+text-decoration: none;
+transition: all 0.3s ease;
+}
+
+nav a.nav-cta:hover { background: var(–teal-light); }
+
+/* ===== SECTION COMMON ===== */
+section {
+padding: 100px 0;
+}
+
+.section-label {
+display: inline-block;
+font-size: 12px;
+font-weight: 700;
+letter-spacing: 3px;
+text-transform: uppercase;
+color: var(–teal);
+margin-bottom: 16px;
+}
+
+.section-title {
+font-family: ‘Playfair Display’, serif;
+font-size: clamp(30px, 4vw, 44px);
+color: var(–text);
+line-height: 1.2;
+margin-bottom: 20px;
+}
+
+.section-desc {
+font-size: 17px;
+color: var(–gray);
+line-height: 1.7;
+max-width: 600px;
+margin-bottom: 50px;
+}
+
+/* ===== PROBLEM SECTION ===== */
+.problem {
+background: var(–cream);
+}
+
+.problem-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 24px;
+}
+
+.problem-card {
+background: var(–white);
+padding: 36px 32px;
+border-radius: 12px;
+border: 1px solid var(–gray-light);
+transition: all 0.3s ease;
+}
+
+.problem-card:hover {
+transform: translateY(-4px);
+box-shadow: 0 12px 40px rgba(0,0,0,0.06);
+}
+
+.problem-card .icon {
+width: 48px;
+height: 48px;
+background: rgba(27,154,170,0.1);
+border-radius: 10px;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-bottom: 20px;
+font-size: 22px;
+}
+
+.problem-card h3 {
+font-size: 20px;
+font-weight: 700;
+margin-bottom: 12px;
+color: var(–text);
+}
+
+.problem-card p {
+font-size: 15px;
+color: var(–gray);
+line-height: 1.7;
+}
+
+/* ===== SERVICES ===== */
+.services-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 24px;
+}
+
+.service-card {
+padding: 40px 32px;
+border-radius: 12px;
+border: 1px solid var(–gray-light);
+position: relative;
+overflow: hidden;
+transition: all 0.3s ease;
+}
+
+.service-card::before {
+content: ‘’;
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 4px;
+background: var(–teal);
+transform: scaleX(0);
+transform-origin: left;
+transition: transform 0.4s ease;
+}
+
+.service-card:hover::before { transform: scaleX(1); }
+
+.service-card:hover {
+transform: translateY(-4px);
+box-shadow: 0 12px 40px rgba(0,0,0,0.06);
+}
+
+.service-card .price {
+font-size: 14px;
+font-weight: 700;
+color: var(–orange);
+letter-spacing: 1px;
+text-transform: uppercase;
+margin-bottom: 12px;
+}
+
+.service-card h3 {
+font-size: 22px;
+font-weight: 700;
+color: var(–text);
+margin-bottom: 16px;
+}
+
+.service-card ul {
+list-style: none;
+padding: 0;
+}
+
+.service-card li {
+font-size: 15px;
+color: var(–gray);
+padding: 8px 0;
+padding-left: 24px;
+position: relative;
+line-height: 1.5;
+}
+
+.service-card li::before {
+content: ‘✓’;
+position: absolute;
+left: 0;
+color: var(–teal);
+font-weight: 700;
+}
+
+/* ===== WHY SECTION ===== */
+.why {
+background: var(–navy);
+color: var(–white);
+}
+
+.why .section-label { color: var(–teal-light); }
+.why .section-title { color: var(–white); }
+.why .section-desc { color: var(–gray); }
+
+.why-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+gap: 32px;
+}
+
+.why-item .num {
+font-family: ‘Playfair Display’, serif;
+font-size: 48px;
+color: rgba(27,154,170,0.3);
+font-weight: 700;
+line-height: 1;
+margin-bottom: 12px;
+}
+
+.why-item h3 {
+font-size: 18px;
+font-weight: 700;
+color: var(–white);
+margin-bottom: 10px;
+}
+
+.why-item p {
+font-size: 15px;
+color: var(–gray);
+line-height: 1.7;
+}
+
+/* ===== PROCESS ===== */
+.process-steps {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+gap: 32px;
+counter-reset: step;
+}
+
+.step {
+text-align: center;
+padding: 20px;
+}
+
+.step::before {
+counter-increment: step;
+content: counter(step);
+display: flex;
+align-items: center;
+justify-content: center;
+width: 56px;
+height: 56px;
+background: var(–teal);
+color: var(–white);
+font-family: ‘Playfair Display’, serif;
+font-size: 24px;
+font-weight: 700;
+border-radius: 50%;
+margin: 0 auto 20px;
+}
+
+.step h3 {
+font-size: 18px;
+font-weight: 700;
+margin-bottom: 8px;
+color: var(–text);
+}
+
+.step p {
+font-size: 14px;
+color: var(–gray);
+line-height: 1.6;
+}
+
+/* ===== CTA ===== */
+.cta-section {
+background: linear-gradient(135deg, var(–navy) 0%, #132D46 100%);
+text-align: center;
+padding: 100px 0;
+position: relative;
+overflow: hidden;
+}
+
+.cta-section::before {
+content: ‘’;
+position: absolute;
+top: -50%;
+left: 50%;
+transform: translateX(-50%);
+width: 1000px;
+height: 1000px;
+background: radial-gradient(circle, rgba(27,154,170,0.08) 0%, transparent 60%);
+}
+
+.cta-section .container { position: relative; z-index: 1; }
+
+.cta-section h2 {
+font-family: ‘Playfair Display’, serif;
+font-size: clamp(30px, 4vw, 44px);
+color: var(–white);
+margin-bottom: 16px;
+}
+
+.cta-section p {
+font-size: 18px;
+color: var(–gray);
+margin-bottom: 36px;
+max-width: 500px;
+margin-left: auto;
+margin-right: auto;
+}
+
+.cta-section .hero-cta {
+animation: none;
+font-size: 17px;
+padding: 18px 44px;
+}
+
+.cta-email {
+display: block;
+margin-top: 20px;
+font-size: 15px;
+color: var(–teal-light);
+text-decoration: none;
+transition: color 0.3s;
+}
+
+.cta-email:hover { color: var(–orange); }
+
+/* ===== FOOTER ===== */
+footer {
+background: var(–navy);
+border-top: 1px solid rgba(255,255,255,0.06);
+padding: 40px 0;
+text-align: center;
+}
+
+footer p {
+font-size: 14px;
+color: var(–gray);
+}
+
+footer .logo {
+display: inline-block;
+margin-bottom: 12px;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeInUp {
+from { opacity: 0; transform: translateY(24px); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+.reveal {
+opacity: 0;
+transform: translateY(24px);
+transition: all 0.7s ease;
+}
+
+.reveal.visible {
+opacity: 1;
+transform: translateY(0);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+.hero-stats { flex-direction: column; gap: 24px; }
+.hero-stats .hero-stat { display: flex; align-items: center; gap: 12px; }
+.hero-stats .hero-stat .number { font-size: 28px; }
+section { padding: 70px 0; }
+.services-grid, .problem-grid { grid-template-columns: 1fr; }
+.why-grid { grid-template-columns: 1fr 1fr; }
+.process-steps { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 480px) {
+.why-grid { grid-template-columns: 1fr; }
+.process-steps { grid-template-columns: 1fr; }
+}
+</style>
+
+</head>
+<body>
+
+<!-- NAV -->
+
+<nav>
+  <div class="container">
+    <a href="#" class="logo"><em>AI</em> Local Pro</a>
+    <a href="#contact" class="nav-cta">Free Audit →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-badge">Serving Long Island & NYC</div>
+    <h1>Your customers are searching.<br><span>They're finding your competitors.</span></h1>
+    <p class="subtitle">AI Local Pro uses artificial intelligence to optimize your Google presence, outrank your competition, and turn local searches into paying customers. No fluff. No long-term contracts. Just results.</p>
+    <a href="#contact" class="hero-cta">Get Your Free SEO Audit →</a>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="number">73%</div>
+        <div class="label">of local searches lead to a<br>visit within 24 hours</div>
+      </div>
+      <div class="hero-stat">
+        <div class="number">46%</div>
+        <div class="label">of all Google searches<br>have local intent</div>
+      </div>
+      <div class="hero-stat">
+        <div class="number">0%</div>
+        <div class="label">of your competitors<br>are using AI for this</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+
+<section class="problem">
+  <div class="container">
+    <span class="section-label reveal">The Problem</span>
+    <h2 class="section-title reveal">Most local businesses are invisible online.</h2>
+    <p class="section-desc reveal">You're great at what you do. But when someone in your area searches Google for your exact service, they find your competitors instead. Here's why:</p>
+    <div class="problem-grid">
+      <div class="problem-card reveal">
+        <div class="icon">📍</div>
+        <h3>Your Google Profile is Incomplete</h3>
+        <p>Missing categories, no service descriptions, outdated photos. Google doesn't know what you do or where you do it — so it shows someone else.</p>
+      </div>
+      <div class="problem-card reveal">
+        <div class="icon">⭐</div>
+        <h3>Your Reviews Aren't Working For You</h3>
+        <p>Your competitors are getting 4x more reviews per month. Google notices. Review velocity directly impacts your map pack ranking.</p>
+      </div>
+      <div class="problem-card reveal">
+        <div class="icon">🔍</div>
+        <h3>Your Website Isn't Optimized</h3>
+        <p>No city-specific pages, no keyword strategy, no content that matches what your customers are actually searching for. You're leaving money on the table.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+
+<section class="services" id="services">
+  <div class="container">
+    <span class="section-label reveal">Services</span>
+    <h2 class="section-title reveal">AI-powered SEO that actually moves the needle.</h2>
+    <p class="section-desc reveal">Every service is backed by AI-driven research and analysis — delivering agency-quality results at a fraction of the cost.</p>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="price">Starting at $500/mo</div>
+        <h3>Starter</h3>
+        <ul>
+          <li>Full Google Business Profile optimization</li>
+          <li>Category & attribute audit vs competitors</li>
+          <li>Citation audit & cleanup</li>
+          <li>Review response templates & strategy</li>
+          <li>8 GBP posts per month</li>
+          <li>Monthly performance snapshot</li>
+        </ul>
+      </div>
+      <div class="service-card reveal">
+        <div class="price">Starting at $1,000/mo</div>
+        <h3>Growth</h3>
+        <ul>
+          <li>Everything in Starter</li>
+          <li>Keyword gap analysis</li>
+          <li>Google Search Console deep dive</li>
+          <li>2 optimized service/city pages per month</li>
+          <li>Competitor backlink analysis</li>
+          <li>Monthly strategy call</li>
+        </ul>
+      </div>
+      <div class="service-card reveal">
+        <div class="price">Starting at $2,000/mo</div>
+        <h3>Domination</h3>
+        <ul>
+          <li>Everything in Growth</li>
+          <li>Full content strategy & execution</li>
+          <li>Entity optimization for Knowledge Graph</li>
+          <li>12 GBP posts per month</li>
+          <li>Bi-weekly strategy calls</li>
+          <li>Priority response & support</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+
+<section class="why">
+  <div class="container">
+    <span class="section-label reveal">Why AI Local Pro</span>
+    <h2 class="section-title reveal">Not another marketing agency.</h2>
+    <p class="section-desc reveal">Most agencies charge $3,000–$5,000/month and deliver templated reports. I use AI to do the heavy lifting and pass the savings to you.</p>
+    <div class="why-grid">
+      <div class="why-item reveal">
+        <div class="num">01</div>
+        <h3>AI-Powered Research</h3>
+        <p>Every audit and strategy is built on AI-driven analysis of your competitors, your market, and your customers' actual search behavior.</p>
+      </div>
+      <div class="why-item reveal">
+        <div class="num">02</div>
+        <h3>Local First</h3>
+        <p>Based in Suffolk County, serving Long Island and NYC. I walk into businesses. I know the neighborhoods. I understand your market.</p>
+      </div>
+      <div class="why-item reveal">
+        <div class="num">03</div>
+        <h3>No Long-Term Contracts</h3>
+        <p>Month-to-month. My results keep you, not a contract. If I'm not moving your rankings and calls, you can walk. Simple.</p>
+      </div>
+      <div class="why-item reveal">
+        <div class="num">04</div>
+        <h3>Transparent Results</h3>
+        <p>Monthly reports you can read in 5 minutes. Rankings, calls, direction requests — the numbers that actually connect to your bank account.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+
+<section class="process">
+  <div class="container">
+    <span class="section-label reveal">How It Works</span>
+    <h2 class="section-title reveal">From invisible to inevitable in 90 days.</h2>
+    <p class="section-desc reveal">A proven system, not a guessing game.</p>
+    <div class="process-steps">
+      <div class="step reveal">
+        <h3>Free Audit</h3>
+        <p>I analyze your Google presence, your competitors, and your market — and show you exactly what's costing you customers.</p>
+      </div>
+      <div class="step reveal">
+        <h3>Quick Wins</h3>
+        <p>GBP optimization, citation cleanup, review strategy — the fixes that can move rankings within days, not months.</p>
+      </div>
+      <div class="step reveal">
+        <h3>Build Authority</h3>
+        <p>Website optimization, city-specific pages, content strategy, backlink building — the compounding work that creates a lasting moat.</p>
+      </div>
+      <div class="step reveal">
+        <h3>Track & Scale</h3>
+        <p>Monthly reporting on the metrics that matter. Double down on what's working. Cut what isn't. Grow.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+
+<section class="cta-section" id="contact">
+  <div class="container">
+    <h2>Ready to outrank your competition?</h2>
+    <p>Get a free audit of your Google presence. No strings, no sales pitch — just an honest look at where you stand and what it'll take to win.</p>
+    <a href="mailto:MRDavis1563@gmail.com" class="hero-cta">Get Your Free Audit →</a>
+    <a href="mailto:MRDavis1563@gmail.com" class="cta-email">MRDavis1563@gmail.com</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+  <div class="container">
+    <a href="#" class="logo"><em>AI</em> Local Pro</a>
+    <p>AI-Powered Local SEO · Long Island & NYC · Mitch Davis</p>
+    <p style="margin-top:8px; font-size: 12px; color: #4A5568;">© 2026 AI Local Pro. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+// Scroll nav
+const nav = document.querySelector('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// Reveal on scroll
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
+
+reveals.forEach(el => observer.observe(el));
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    document.querySelector(a.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+  });
+});
+</script>
+
+</body>
+</html>
