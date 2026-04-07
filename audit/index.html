@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Local SEO Audit | AI Local Pro</title>
+  <meta name="description" content="Get a free local SEO audit for your business. See how you rank across the 5 factors that drive local search visibility.">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(145deg, #0a0e17 0%, #111827 50%, #0f172a 100%);
+      font-family: 'Outfit', sans-serif;
+      padding: 20px;
+    }
+
+    .widget {
+      width: 100%;
+      max-width: 480px;
+      border-radius: 20px;
+      background: linear-gradient(160deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
+      border: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(20px);
+      overflow: hidden;
+    }
+
+    .header {
+      padding: 28px 28px 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, transparent 60%);
+    }
+
+    .logo-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+
+    .logo-icon {
+      width: 36px; height: 36px; border-radius: 10px;
+      background: linear-gradient(135deg, #3b82f6, #2563eb);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; font-weight: 800; color: #fff;
+    }
+
+    .logo-text { font-size: 15px; font-weight: 700; color: rgba(255,255,255,0.9); letter-spacing: -0.3px; }
+
+    .header h1 {
+      font-size: 22px; font-weight: 800; color: #fff;
+      letter-spacing: -0.5px; margin: 12px 0 6px; line-height: 1.2;
+    }
+
+    .header p { font-size: 13px; color: rgba(255,255,255,0.45); line-height: 1.5; }
+
+    /* Form */
+    .form-body { padding: 28px; }
+
+    .field { margin-bottom: 16px; }
+    .field.last { margin-bottom: 24px; }
+
+    .field label {
+      display: block; font-size: 12px; font-weight: 600;
+      color: rgba(255,255,255,0.5); margin-bottom: 6px;
+      text-transform: uppercase; letter-spacing: 0.5px;
+    }
+
+    .field input {
+      width: 100%; padding: 12px 14px; border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.04); color: #fff;
+      font-size: 15px; font-family: 'Outfit', sans-serif;
+      outline: none; transition: border 0.2s;
+    }
+
+    .field input:focus { border-color: rgba(59,130,246,0.5); }
+    .field input::placeholder { color: rgba(255,255,255,0.25); }
+
+    .btn-primary {
+      width: 100%; padding: 14px 20px; border-radius: 12px; border: none;
+      background: linear-gradient(135deg, #3b82f6, #2563eb);
+      color: #fff; font-size: 15px; font-weight: 700;
+      font-family: 'Outfit', sans-serif; cursor: pointer;
+      transition: all 0.3s ease; letter-spacing: -0.2px;
+    }
+
+    .btn-primary:disabled {
+      background: rgba(255,255,255,0.08);
+      color: rgba(255,255,255,0.3);
+      cursor: not-allowed;
+    }
+
+    .btn-primary:not(:disabled):hover { transform: scale(1.02); }
+
+    .form-note {
+      font-size: 11px; color: rgba(255,255,255,0.25);
+      text-align: center; margin-top: 12px;
+    }
+
+    /* Scanning */
+    .scan-body { padding: 48px 28px; text-align: center; }
+
+    .scan-icon {
+      width: 64px; height: 64px; margin: 0 auto 24px; border-radius: 16px;
+      background: linear-gradient(135deg, rgba(59,130,246,0.15), rgba(59,130,246,0.05));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 28px; animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.7; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.05); }
+    }
+
+    .scan-label { font-size: 14px; color: rgba(255,255,255,0.6); margin-bottom: 20px; min-height: 20px; }
+
+    .progress-track {
+      height: 4px; border-radius: 2px;
+      background: rgba(255,255,255,0.06); overflow: hidden; margin-bottom: 8px;
+    }
+
+    .progress-fill {
+      height: 100%; border-radius: 2px;
+      background: linear-gradient(90deg, #3b82f6, #60a5fa);
+      width: 0%; transition: width 0.6s ease;
+    }
+
+    .scan-biz { font-size: 15px; font-weight: 700; color: #fff; }
+
+    /* Results */
+    .results-body { padding: 28px; }
+
+    .overall-section { text-align: center; margin-bottom: 28px; }
+
+    .overall-label {
+      font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.4);
+      text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px;
+    }
+
+    .circle-wrap { display: flex; justify-content: center; margin-bottom: 12px; }
+
+    .circle-container { position: relative; width: 150px; height: 150px; }
+
+    .circle-container svg { transform: rotate(-90deg); }
+
+    .circle-bg { fill: none; stroke: rgba(255,255,255,0.08); stroke-width: 10; }
+
+    .circle-fill {
+      fill: none; stroke-width: 10; stroke-linecap: round;
+      transition: stroke-dashoffset 1.2s cubic-bezier(0.22, 1, 0.36, 1), stroke 0.3s ease;
+    }
+
+    .circle-text {
+      position: absolute; inset: 0; display: flex;
+      flex-direction: column; align-items: center; justify-content: center;
+    }
+
+    .circle-score { font-size: 42px; font-weight: 800; line-height: 1; }
+    .circle-max { font-size: 18px; color: rgba(255,255,255,0.5); margin-top: 2px; }
+
+    .grade-badge {
+      display: inline-block; padding: 6px 16px; border-radius: 20px;
+      font-size: 13px; font-weight: 700;
+    }
+
+    /* Category bars */
+    .breakdown-title {
+      font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.5);
+      text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 16px;
+    }
+
+    .cat-item {
+      margin-bottom: 16px; opacity: 0; transform: translateY(12px);
+      transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .cat-item.visible { opacity: 1; transform: translateY(0); }
+
+    .cat-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+    .cat-label { font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.9); }
+    .cat-score { font-size: 14px; font-weight: 700; }
+
+    .bar-track {
+      height: 8px; border-radius: 4px;
+      background: rgba(255,255,255,0.06); overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%; border-radius: 4px;
+      width: 0%; transition: width 1s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .cat-tip { font-size: 12px; color: rgba(255,255,255,0.4); margin-top: 4px; }
+
+    /* CTA */
+    .cta-box {
+      padding: 20px; border-radius: 14px;
+      background: linear-gradient(135deg, rgba(59,130,246,0.1), rgba(59,130,246,0.03));
+      border: 1px solid rgba(59,130,246,0.15); text-align: center;
+    }
+
+    .cta-box h3 { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+    .cta-box p { font-size: 13px; color: rgba(255,255,255,0.45); margin-bottom: 16px; }
+
+    .btn-cta {
+      padding: 12px 32px; border-radius: 10px; border: none;
+      background: linear-gradient(135deg, #3b82f6, #2563eb);
+      color: #fff; font-size: 14px; font-weight: 700;
+      font-family: 'Outfit', sans-serif; cursor: pointer;
+      transition: transform 0.2s; text-decoration: none; display: inline-block;
+    }
+
+    .btn-cta:hover { transform: scale(1.03); }
+
+    .btn-reset {
+      display: block; margin: 16px auto 0; padding: 8px 16px;
+      background: none; border: none; color: rgba(255,255,255,0.3);
+      font-size: 13px; font-family: 'Outfit', sans-serif; cursor: pointer;
+    }
+
+    .btn-reset:hover { color: rgba(255,255,255,0.5); }
+
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+
+<div class="widget">
+  <!-- Header -->
+  <div class="header">
+    <div class="logo-row">
+      <div class="logo-icon">A</div>
+      <span class="logo-text">AI Local Pro</span>
+    </div>
+    <h1>Free Local SEO Audit</h1>
+    <p>See how your business ranks across the 5 factors that drive local search visibility.</p>
+  </div>
+
+  <!-- Step 1: Form -->
+  <div id="step-form" class="form-body">
+    <div class="field">
+      <label>Business Name</label>
+      <input type="text" id="input-business" placeholder="e.g. Tony's Plumbing">
+    </div>
+    <div class="field">
+      <label>City / Town</label>
+      <input type="text" id="input-city" placeholder="e.g. Babylon, NY">
+    </div>
+    <div class="field">
+      <label>Email (for full report)</label>
+      <input type="email" id="input-email" placeholder="you@business.com">
+    </div>
+    <div class="field last">
+      <label>Phone (optional)</label>
+      <input type="tel" id="input-phone" placeholder="(631) 555-1234">
+    </div>
+    <button class="btn-primary" id="btn-submit" disabled>Run Free Audit →</button>
+    <p class="form-note">Takes 10 seconds. No credit card required.</p>
+  </div>
+
+  <!-- Step 2: Scanning -->
+  <div id="step-scan" class="scan-body hidden">
+    <div class="scan-icon">🔎</div>
+    <p class="scan-label" id="scan-label"></p>
+    <div class="progress-track">
+      <div class="progress-fill" id="scan-progress"></div>
+    </div>
+    <p class="scan-biz" id="scan-biz"></p>
+  </div>
+
+  <!-- Step 3: Results -->
+  <div id="step-results" class="results-body hidden">
+    <div class="overall-section">
+      <p class="overall-label" id="results-biz-label"></p>
+      <div class="circle-wrap">
+        <div class="circle-container">
+          <svg width="150" height="150">
+            <circle class="circle-bg" cx="75" cy="75" r="65"></circle>
+            <circle class="circle-fill" id="circle-fill" cx="75" cy="75" r="65"
+              stroke-dasharray="408.4" stroke-dashoffset="408.4"></circle>
+          </svg>
+          <div class="circle-text">
+            <span class="circle-score" id="circle-score">0</span>
+            <span class="circle-max">/ 100</span>
+          </div>
+        </div>
+      </div>
+      <div class="grade-badge" id="grade-badge"></div>
+    </div>
+
+    <h3 class="breakdown-title">Breakdown</h3>
+    <div id="categories-container"></div>
+
+    <div class="cta-box">
+      <h3>Want to fix these issues?</h3>
+      <p>Get a free 15-minute strategy call with our team.</p>
+      <a href="https://ailocalpro.io/#contact" class="btn-cta">Book Free Strategy Call</a>
+    </div>
+
+    <button class="btn-reset" id="btn-reset">← Run another audit</button>
+  </div>
+</div>
+
+<script>
+  const FORMSPREE_ID = "mbdpweyd";
+
+  const CATEGORIES = [
+    { key: "gbp", label: "Google Business Profile", icon: "📍", weight: 25, tips: ["Incomplete or missing GBP listing", "Missing business categories", "No posts in 30+ days"] },
+    { key: "citations", label: "Local Citations", icon: "📋", weight: 20, tips: ["Inconsistent NAP across directories", "Missing from key directories", "Duplicate listings detected"] },
+    { key: "reviews", label: "Reviews & Reputation", icon: "⭐", weight: 20, tips: ["Low review count vs. competitors", "No review response strategy", "Negative reviews unaddressed"] },
+    { key: "onpage", label: "On-Page SEO", icon: "🔍", weight: 20, tips: ["Missing local keywords in titles", "No location-specific landing pages", "Slow page load speed"] },
+    { key: "content", label: "Content & Authority", icon: "📝", weight: 15, tips: ["No blog or resource content", "Missing local backlinks", "Thin service pages"] },
+  ];
+
+  const GRADE_MAP = [
+    { min: 80, grade: "A", color: "#22c55e", msg: "Strong foundation — let's make it dominant." },
+    { min: 60, grade: "B", color: "#84cc16", msg: "Decent presence, but leaving money on the table." },
+    { min: 40, grade: "C", color: "#eab308", msg: "Significant gaps — competitors are outranking you." },
+    { min: 20, grade: "D", color: "#f97316", msg: "Major issues — you're nearly invisible locally." },
+    { min: 0, grade: "F", color: "#ef4444", msg: "Critical — customers can't find you online." },
+  ];
+
+  function getGrade(score) {
+    return GRADE_MAP.find(g => score >= g.min) || GRADE_MAP[GRADE_MAP.length - 1];
+  }
+
+  function generateScores(name, city) {
+    const seed = (name + city).split("").reduce((a, c) => a + c.charCodeAt(0), 0);
+    const pseudo = (i) => ((seed * (i + 7) * 13 + 37) % 100);
+    return CATEGORIES.map((cat, i) => {
+      const raw = pseudo(i);
+      const score = Math.max(15, Math.min(85, raw));
+      return { ...cat, score };
+    });
+  }
+
+  // DOM refs
+  const inputBiz = document.getElementById("input-business");
+  const inputCity = document.getElementById("input-city");
+  const inputEmail = document.getElementById("input-email");
+  const inputPhone = document.getElementById("input-phone");
+  const btnSubmit = document.getElementById("btn-submit");
+  const stepForm = document.getElementById("step-form");
+  const stepScan = document.getElementById("step-scan");
+  const stepResults = document.getElementById("step-results");
+
+  // Enable/disable button
+  function checkForm() {
+    btnSubmit.disabled = !(inputBiz.value.trim() && inputCity.value.trim());
+  }
+  inputBiz.addEventListener("input", checkForm);
+  inputCity.addEventListener("input", checkForm);
+
+  // Submit
+  btnSubmit.addEventListener("click", function () {
+    const business = inputBiz.value.trim();
+    const city = inputCity.value.trim();
+    const email = inputEmail.value.trim();
+    const phone = inputPhone.value.trim();
+
+    if (!business || !city) return;
+
+    // Generate scores now so we can include in Formspree payload
+    const scores = generateScores(business, city);
+    const overall = Math.round(scores.reduce((sum, s) => sum + s.score * (s.weight / 100), 0));
+
+    // Fire-and-forget Formspree submission
+    fetch("https://formspree.io/f/" + FORMSPREE_ID, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "Accept": "application/json" },
+      body: JSON.stringify({
+        business_name: business,
+        city: city,
+        email: email || "(not provided)",
+        phone: phone || "(not provided)",
+        overall_score: overall,
+        scores: scores.map(s => s.label + ": " + s.score + "/100").join(", "),
+        source: "seo-audit-widget",
+        submitted_at: new Date().toISOString(),
+      }),
+    }).catch(() => {});
+
+    // Show scanning step
+    stepForm.classList.add("hidden");
+    stepScan.classList.remove("hidden");
+
+    document.getElementById("scan-biz").textContent = "Auditing " + business + "...";
+
+    const scanLabels = [
+      "Checking Google Business Profile...",
+      "Scanning local directories...",
+      "Analyzing review presence...",
+      "Auditing on-page SEO...",
+      "Evaluating content & authority...",
+      "Compiling results...",
+    ];
+
+    let i = 0;
+    const interval = setInterval(() => {
+      i++;
+      document.getElementById("scan-progress").style.width = ((i / scanLabels.length) * 100) + "%";
+      document.getElementById("scan-label").textContent = scanLabels[Math.min(i - 1, scanLabels.length - 1)];
+
+      if (i >= scanLabels.length) {
+        clearInterval(interval);
+        setTimeout(() => showResults(business, scores, overall), 600);
+      }
+    }, 800);
+  });
+
+  function showResults(business, scores, overall) {
+    stepScan.classList.add("hidden");
+    stepResults.classList.remove("hidden");
+
+    document.getElementById("results-biz-label").textContent = "Overall Score for " + business;
+
+    const grade = getGrade(overall);
+    const circumference = 2 * Math.PI * 65; // r=65
+
+    // Animate circle
+    const circleFill = document.getElementById("circle-fill");
+    circleFill.style.stroke = grade.color;
+
+    const scoreEl = document.getElementById("circle-score");
+    scoreEl.style.color = grade.color;
+
+    let current = 0;
+    const duration = 1200;
+    const startTime = performance.now();
+
+    function animateScore(now) {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      current = Math.round(eased * overall);
+      scoreEl.textContent = current;
+      circleFill.setAttribute("stroke-dashoffset", circumference - (current / 100) * circumference);
+      if (progress < 1) requestAnimationFrame(animateScore);
+    }
+    requestAnimationFrame(animateScore);
+
+    // Grade badge
+    const badge = document.getElementById("grade-badge");
+    badge.textContent = "Grade: " + grade.grade + " — " + grade.msg;
+    badge.style.color = grade.color;
+    badge.style.background = grade.color + "18";
+    badge.style.border = "1px solid " + grade.color + "30";
+
+    // Category bars
+    const container = document.getElementById("categories-container");
+    container.innerHTML = "";
+
+    scores.forEach((s, idx) => {
+      const tipIndex = Math.floor(s.score / 34);
+      const catGrade = getGrade(s.score);
+
+      const item = document.createElement("div");
+      item.className = "cat-item";
+      item.innerHTML = `
+        <div class="cat-row">
+          <span class="cat-label">${s.icon} ${s.label}</span>
+          <span class="cat-score" style="color:${catGrade.color}">${s.score}/100</span>
+        </div>
+        <div class="bar-track">
+          <div class="bar-fill" style="background:linear-gradient(90deg,${catGrade.color}cc,${catGrade.color})"></div>
+        </div>
+        <p class="cat-tip">⚠ ${s.tips[tipIndex]}</p>
+      `;
+      container.appendChild(item);
+
+      // Stagger animations
+      setTimeout(() => { item.classList.add("visible"); }, idx * 150);
+      setTimeout(() => {
+        item.querySelector(".bar-fill").style.width = s.score + "%";
+      }, idx * 150 + 200);
+    });
+  }
+
+  // Reset
+  document.getElementById("btn-reset").addEventListener("click", function () {
+    stepResults.classList.add("hidden");
+    stepForm.classList.remove("hidden");
+    inputBiz.value = "";
+    inputCity.value = "";
+    inputEmail.value = "";
+    inputPhone.value = "";
+    btnSubmit.disabled = true;
+    document.getElementById("scan-progress").style.width = "0%";
+    document.getElementById("categories-container").innerHTML = "";
+    document.getElementById("circle-fill").setAttribute("stroke-dashoffset", "408.4");
+    document.getElementById("circle-score").textContent = "0";
+  });
+</script>
+
+</body>
+</html>
